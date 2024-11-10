@@ -1,0 +1,17 @@
+nav {
+  z-index: 50; /* Mantiene el sidebar en un nivel superior */
+}
+
+header {
+  height: 4rem; /* Altura del navbar */
+  z-index: 10;  /* Navbar por encima del contenido */
+  background-color: #1a1a1a; /* Negro más oscuro */
+}
+
+.bg-active {
+  background-color: #2f69c7; /* Color azul activo */
+}
+
+.hover\:bg-hover:hover {
+  background-color: #2f69c7; /* Color al pasar el cursor */
+}

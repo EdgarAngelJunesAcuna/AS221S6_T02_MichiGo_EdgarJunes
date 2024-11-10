@@ -1,0 +1,95 @@
+{
+  "NAV": {
+    "ABOUT": "About us",
+    "SERVICES": "Services",
+    "CASES": "Use Cases",
+    "PRICING": "Pricing",
+    "BLOG": "Blog",
+    "LOGIN": "Let's get started",
+    "LEARN_MORE": "Learn more"
+  },
+  "MAIN": {
+    "TITLE": "The Next Generation Digital Wallet",
+    "DESCRIPTION": "MichiGo offers a secure and convenient digital wallet to store, manage, and transfer your cryptocurrencies. Our platform allows you to send, receive, and exchange cryptocurrencies easily, all while keeping your funds safe with state-of-the-art encryption and security technology.",
+    "GET_STARTED": "Get Started Now"
+  },
+  "HAPPEN": {
+    "TITLE": "Let's Make Things Happen",
+    "DESCRIPTION": "Contact us today to learn how MichiGo can help you manage your cryptocurrencies securely and efficiently.",
+    "BUTTON": "Get your free proposal"
+  },
+  "OBJECTIVES": {
+    "SECTION_TITLE": "Our Objectives",
+    "SECTION_DESC": "These are MichiGo's main goals to help you manage your digital assets.",
+    "OBJECTIVE_1_TITLE": "Cryptocurrency Security",
+    "OBJECTIVE_1_DESC": "Keep your cryptocurrencies safe with our advanced security features.",
+    "OBJECTIVE_2_TITLE": "Wallet Management",
+    "OBJECTIVE_2_DESC": "Manage your cryptocurrencies efficiently and hassle-free.",
+    "OBJECTIVE_3_TITLE": "Fast Exchange",
+    "OBJECTIVE_3_DESC": "Quickly and securely exchange cryptocurrencies on our platform."
+  },
+  "BENEFITS": {
+    "SECTION_TITLE": "Discover Our Benefits",
+    "SECTION_DESC": "Learn about the advantages of using MichiGo.",
+    "BENEFIT_1_TITLE": "Security 😺 MichiGo",
+    "BENEFIT_1_DESC": "Your digital assets are safe with MichiGo's advanced security features.",
+    "BENEFIT_2_TITLE": "Efficiency 😺 MichiGo",
+    "BENEFIT_2_DESC": "Manage your digital currencies effortlessly with our optimized platform.",
+    "BENEFIT_3_TITLE": "Flexibility 😺 MichiGo",
+    "BENEFIT_3_DESC": "Adapt your digital asset management to your needs.",
+    "BENEFIT_4_TITLE": "Support 😺 MichiGo",
+    "BENEFIT_4_DESC": "We provide 24/7 support to ensure your experience is smooth."
+  },
+  "FEATURES": {
+    "TITLE": "Why choose MichiGo?",
+    "FEATURE_1_TITLE": "Advanced Security",
+    "FEATURE_1_DESC": "We offer advanced blockchain security to keep your assets safe.",
+    "FEATURE_2_TITLE": "User-Friendly Interface",
+    "FEATURE_2_DESC": "Our platform is designed to be intuitive and easy to use.",
+    "FEATURE_3_TITLE": "Fast Transactions",
+    "FEATURE_3_DESC": "Enjoy fast and secure transactions using MichiGo.",
+    "FEATURE_4_TITLE": "24/7 Support",
+    "FEATURE_4_DESC": "We provide round-the-clock support to help you with any issues."
+  },
+  "TEAM": {
+    "SECTION_TITLE": "Meet Our Team",
+    "SECTION_DESC": "Get to know the talented developers behind MichiGo. We are dedicated to building a secure and efficient platform for managing your digital assets.",
+    "MEMBERS": [
+      {
+        "NAME": "Brandon Gabriel Guerrero More",
+        "ROLE": "Developer of MichiGo",
+        "DESCRIPTION": "We are system analysis students from the sixth semester at Instituto Valle Grande, and we are the developers of MichiGo."
+      },
+      {
+        "NAME": "Anghela Antonella Rodriguez Barrios",
+        "ROLE": "Developer of MichiGo",
+        "DESCRIPTION": "We are system analysis students from the sixth semester at Instituto Valle Grande, and we are the developers of MichiGo."
+      },
+      {
+        "NAME": "Edgar Angel Raziel Junes Acuña",
+        "ROLE": "Developer of MichiGo",
+        "DESCRIPTION": "We are system analysis students from the sixth semester at Instituto Valle Grande, and we are the developers of MichiGo."
+      }
+    ],
+    "SEE_ALL_BUTTON": "See all team"
+  },
+  "CONCLUSIONS": {
+    "TITLE": "Conclusions",
+    "CONTENT": "The MichiGo platform has been successfully designed to provide a secure and efficient solution for digital currency management. Throughout its development, we have learned the importance of creating a user-friendly interface and incorporating security features to ensure user confidence. Future improvements could include expanding features for offline access and enhanced transaction transparency."
+  },
+  "FOOTER": {
+    "DESCRIPTION": "MichiGo is designed to revolutionize your digital currency experience. Join us for a secure and seamless financial future.",
+    "LINK_ABOUT": "About Us",
+    "LINK_SERVICES": "Services",
+    "LINK_CONTACT": "Contact Us",
+    "RIGHTS": "All rights reserved."
+  },
+  "LOGIN": {
+    "BUTTON_TEXT": "Login",
+    "TITLE": "Sign in to MichiGo",
+    "ETHEREUM": "Sign in with Ethereum",
+    "SOLANA": "Sign in with Solana",
+    "STARKNET": "Sign in with Starknet",
+    "SEND_MAGIC_LINK": "Send Magic Link"
+  }
+}

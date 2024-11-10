@@ -1,0 +1,91 @@
+<div class="flex">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Main content area -->
+    <div class="flex-1 ml-64">
+        <!-- Navbar -->
+        <app-navbar></app-navbar>
+
+        <!-- Contenido principal debajo del navbar -->
+        <div class="p-6 mt-16">
+            <h2 class="text-2xl font-bold mb-4">Transacciones</h2>
+
+            <div class="flex items-center mb-4 space-x-4">
+                <button *ngIf="!isWalletConnected" (click)="connectMetaMask()"
+                    class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">
+                    Conectar Wallet
+                </button>
+
+                <div *ngIf="isWalletConnected" class="flex items-center space-x-2">
+                    <div class="bg-black px-3 py-2 rounded flex items-center space-x-2">
+                        <span class="text-white">{{ balance }} ETH</span>
+                        <img src="assets/gatito-icon.png" alt="Avatar" class="w-6 h-6 rounded-full">
+                        <span class="text-white">{{ accountAddress | slice:0:6 }}...{{ accountAddress | slice:-4
+                            }}</span>
+                    </div>
+
+                    <div class="bg-black px-3 py-2 rounded flex items-center space-x-2 cursor-pointer"
+                        (click)="toggleNetworkModal()">
+                        <img [src]="getNetworkIcon(currentNetwork)" alt="Network Icon" class="w-4 h-4">
+                        <!-- Icono de la red -->
+                        <span class="text-white">{{ currentNetwork }}</span>
+                        <span class="text-white">▼</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="block mb-2 text-sm font-bold">Dirección de destino:</label>
+                <input [(ngModel)]="recipientAddress" [disabled]="!isWalletConnected"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                    type="text" placeholder="0x...">
+            </div>
+
+            <div class="mb-4">
+                <label class="block mb-2 text-sm font-bold">Monto (ETH):</label>
+                <input [(ngModel)]="amount" [disabled]="!isWalletConnected"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                    type="text" placeholder="Monto en ETH">
+            </div>
+
+            <button (click)="sendTransaction()" [disabled]="!isWalletConnected"
+                class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">
+                Enviar Transacción
+            </button>
+        </div>
+
+        <!-- Zona en blanco con la animación del gatito -->
+        <div class="cat-animation-container">
+            <img src="https://www.icegif.com/wp-content/uploads/2022/09/icegif-379.gif" alt="Gato corriendo"
+                class="cat-animation">
+        </div>
+
+
+        <!-- Modal para cambiar red -->
+        <div *ngIf="isNetworkModalVisible" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+            (click)="closeNetworkModal($event)">
+            <div class="bg-gray-900 p-4 rounded-md shadow-lg w-1/4 text-white relative"
+                (click)="$event.stopPropagation()">
+                <h3 class="text-lg font-bold mb-4">Cambiar Redes</h3>
+                <ul class="space-y-2">
+                    <li *ngFor="let network of networks" (click)="switchNetwork(network)"
+                        class="py-2 px-4 cursor-pointer flex justify-between items-center rounded"
+                        [ngClass]="{'bg-white text-black': currentNetwork === network.name, 'hover:bg-gray-800': currentNetwork !== network.name}">
+                        <span class="flex items-center space-x-4 font-bold">
+                            <img [src]="network.icon" alt="{{ network.name }} Icon" class="w-6 h-6">
+                            <span class="ml-4">{{ network.name }}</span>
+                        </span>
+                        <span *ngIf="currentNetwork === network.name"
+                            class="flex items-center space-x-1 text-green-500 font-bold">
+                            <span>Conectado</span>
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                        </span>
+                        <span *ngIf="isSwitching && selectedNetwork?.name === network.name"
+                            class="text-yellow-400 font-bold">Esperando confirmación...</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

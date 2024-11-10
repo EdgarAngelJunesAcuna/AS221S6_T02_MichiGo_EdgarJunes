@@ -1,0 +1,84 @@
+/* Estilos generales del contenedor */
+.carga-container {
+    text-align: center;
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Imagen del gato Michigo */
+  .michigo-img {
+    width: 400px; /* Ajuste de tamaño más grande para el gato */
+    animation: float 3s ease-in-out infinite; /* Movimiento flotante */
+  }
+  
+  /* Animación de flotación */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px); /* Movimiento hacia arriba */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Estilo del texto de bienvenida (WELCOME MICHIGO) */
+  .welcome-text {
+    color: rgb(0, 0, 0);
+    font-size: 64px; /* Tamaño de la fuente según tu diseño */
+    font-family: 'Zen Antique', serif; /* Aplicación de la fuente Zen Antique */
+    margin-top: 20px;
+  }
+  
+  /* Loader animado - la barra de progreso */
+  .loader {
+    margin-top: 30px;
+    width: 300px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  /* Movimiento del progreso de la barra */
+  .loader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background-color: #ffd700;
+    border-radius: 10px;
+    animation: loading 2s linear infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      left: 0;
+      width: 50px;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      left: 250px;
+      width: 50px;
+    }
+  }
+  
+  /* Texto de "Cargando" */
+  .cargando-text {
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    font-size: 32px; /* Ajuste de tamaño según tu diseño */
+    font-family: 'Kavoon', cursive; /* Aplicación de la fuente Kavoon */
+  }
+  

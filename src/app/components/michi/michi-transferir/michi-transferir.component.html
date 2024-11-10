@@ -1,0 +1,54 @@
+<!-- Modal flotante en la parte superior derecha -->
+<div *ngIf="isModalOpen" class="modal-container fixed top-5 right-5 bg-white p-4 rounded-lg shadow-lg w-auto z-50">
+    <div>
+      <h2 class="text-lg font-bold mb-2">{{ modalTitle }}</h2>
+      <p>{{ modalContent }}</p>
+      <button (click)="closeModal()" class="modal-btn mt-2">Cerrar</button>
+    </div>
+  </div>
+  
+  <!-- Contenido principal de la página -->
+  <div class="web3-container bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('assets/cielo.png');">
+    <div class="web3-card p-8 bg-white bg-opacity-90 rounded-2xl shadow-xl w-full max-w-lg">
+      <h1 class="gradient-title mb-6">TRANSFERENCIA CON MICHIMASK</h1>
+      <div class="web3-card-content space-y-4">
+  
+        <!-- Input para la cuenta del remitente -->
+        <label for="senderAccount" class="block mb-2 text-gray-700 text-left">Cuenta de Remitente:</label>
+        <div class="relative">
+          <input id="senderAccount" (input)="onSenderInputChange($event)"
+                 [type]="isSenderHidden ? 'password' : 'text'"
+                 placeholder="Introduce la dirección del remitente" 
+                 class="web3-input focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none transition-all duration-200 ease-in-out" />
+          <button type="button" class="absolute right-3 top-3" (click)="toggleSenderVisibility()">
+            <img src="assets/ojo-abierto.png" alt="Toggle visibility" class="w-6 h-6"/>
+          </button>
+        </div>
+  
+        <!-- Input para la cuenta del destinatario -->
+        <label for="recipientAccount" class="block mb-2 text-gray-700 text-left">Cuenta de Destinatario:</label>
+        <div class="relative">
+          <input id="recipientAccount" (input)="onRecipientInputChange($event)"
+                 [type]="isRecipientHidden ? 'password' : 'text'"
+                 placeholder="Introduce la dirección del destinatario"
+                 class="web3-input focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none transition-all duration-200 ease-in-out" />
+          <button type="button" class="absolute right-3 top-3" (click)="toggleRecipientVisibility()">
+            <img src="assets/ojo-abierto.png" alt="Toggle visibility" class="w-6 h-6"/>
+          </button>
+        </div>
+  
+        <!-- Input para el monto de la transferencia -->
+        <label for="transferAmount" class="block mb-2 text-gray-700 text-left">Monto a Transferir (ETH):</label>
+        <input id="transferAmount" (input)="onAmountInputChange($event)" 
+               placeholder="Introduce el monto en ETH" 
+               class="web3-input focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none transition-all duration-200 ease-in-out mb-4" />
+  
+        <button (click)="connectMetaMask()" 
+                class="web3-btn w-full py-3 text-lg bg-gradient-to-r from-blue-500 to-teal-400 text-white rounded-lg hover:bg-gradient-to-l focus:ring-4 focus:ring-teal-300 transition-all duration-300 ease-in-out">
+          Conectar MetaMask
+        </button>
+  
+      </div>
+    </div>
+  </div>
+  

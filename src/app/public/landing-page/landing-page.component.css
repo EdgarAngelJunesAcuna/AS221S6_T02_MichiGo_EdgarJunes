@@ -1,0 +1,159 @@
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes border-animation {
+  0% {
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+  }
+  100% {
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+  }
+}
+
+.modal-border {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 8px;
+  position: relative;
+  animation: border-animation 2s infinite alternate;
+  z-index: 50; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+.fixed {
+  z-index: 50; /* Coloca el fondo del modal por encima de otros elementos */
+}
+
+@keyframes border-gradient {
+  0% {
+    border-color: #ff6a00;
+  }
+  25% {
+    border-color: #ffca00;
+  }
+  50% {
+    border-color: #00ff00;
+  }
+  75% {
+    border-color: #007bff;
+  }
+  100% {
+    border-color: #ff6a00;
+  }
+}
+
+.animate-border-gradient {
+  animation: border-gradient 4s infinite;
+  border-style: solid;
+}
+
+/* Clase para el resplandor multicolor del modal */
+.multicolor-glow {
+  position: relative;
+  box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7);
+  filter: brightness(1.2);
+  animation: glow 3s infinite alternate;
+}
+
+/* Animación para cambiar los colores del resplandor */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.7);
+  }
+  25% {
+    box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 255, 0.7), 0 0 30px rgba(0, 0, 255, 0.7);
+  }
+  75% {
+    box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.7), 0 0 30px rgba(255, 255, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 255, 0.7), 0 0 30px rgba(255, 0, 255, 0.7);
+  }
+}
+
+/* Animación*/
+footer {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0; /* Evita que el footer se estire o se coloque fuera de lugar */
+}
+
+footer::before, footer::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 165, 0, 0.6);
+  border-radius: 50%;
+  animation: floating 5s infinite ease-in-out;
+}
+
+footer::after {
+  top: auto;
+  bottom: -100px;
+  right: -100px;
+  left: auto;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Estilos para el tema oscuro */
+.dark footer {
+  background-color: #111827;
+}
+
+.dark footer p,
+.dark footer a {
+  color: #d1d5db;
+}
+
+.dark footer a:hover {
+  color: #ffab00;
+}
+
+/* Hover efectos */
+footer a:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-in-out;
+}
+
+i {
+  transition: color 0.3s ease-in-out;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F1F5F9; /* Ajusta el color de fondo como necesites */
+}
+

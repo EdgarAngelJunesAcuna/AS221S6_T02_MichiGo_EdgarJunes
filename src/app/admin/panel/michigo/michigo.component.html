@@ -1,0 +1,32 @@
+<div class="min-h-screen flex flex-col justify-center items-center bg-white">
+    <!-- Logo de MichiGo -->
+    <div class="absolute top-6 left-8 flex items-center space-x-2">
+        <img src="/assets/michigo.png" alt="MichiGo Logo" class="w-16 h-16">
+        <span class="text-black text-4xl font-bold">MichiGo</span>
+    </div>
+
+    <!-- Contenedor principal amarillo más bajo -->
+    <div class="bg-[#FCB115] p-10 rounded-xl shadow-lg text-center w-full max-w-[900px] mt-13">
+        <!-- Título -->
+        <h1 class="text-5xl font-bold text-white mb-4">Comencemos</h1>
+        <p class="text-lg text-white mb-6 leading-relaxed">Con la confianza de millones de personas, MichiGo es una
+            cartera segura que pone el mundo de la web3 al alcance de todos.</p>
+
+        <!-- Imagen del gato MichiGo más grande -->
+        <div class="mb-6">
+            <img src="/assets/michigo.png" alt="MichiGo Cat" class="mx-auto w-72 h-72">
+        </div>
+
+        <!-- Checkbox de términos -->
+        <label class="flex items-center justify-center space-x-2 text-white mb-2">
+            <input type="checkbox" class="form-checkbox h-5 w-5 text-orange-500 border-gray-300 rounded">
+            <span>I agree to MichiGo Términos de uso</span>
+        </label>
+        
+        <!-- Botón de Ingresar por una cartera existente reducido -->
+        <button (click)="checkMetaMask()"
+            class="w-3/4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold py-2 px-4 rounded-full shadow-lg hover:from-yellow-600 hover:to-orange-600 transition-colors duration-300">
+            Ingresa por una cartera existente
+        </button>
+    </div>
+</div>

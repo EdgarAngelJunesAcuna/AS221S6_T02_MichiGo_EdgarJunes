@@ -1,0 +1,47 @@
+/* Fondo con un gradiente radial más visible */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, #4a4a4a, #000000 40%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+/* Fondo con gradiente y animación */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, #4a4a4a, #000000 40%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease-in-out infinite;
+}
+
+/* Efecto de sombra más suave en las tarjetas */
+.card-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-shadow:hover {
+  transform: translateY(-5px); /* Efecto de elevación */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de hover en los botones */
+.button-hover {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-hover:hover {
+  background-color: #f5b500; /* Cambia ligeramente el color del fondo */
+  color: #000; /* Cambia el color del texto a negro */
+}
+

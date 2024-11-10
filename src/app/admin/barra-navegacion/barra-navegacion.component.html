@@ -1,0 +1,16 @@
+<div class="flex">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+  
+    <!-- Main content area -->
+    <div class="flex-1 ml-64">
+      <!-- Navbar -->
+      <app-navbar></app-navbar>
+  
+      <!-- Contenido principal debajo del navbar -->
+      <div class="p-6 mt-16"> <!-- Este mt-16 ajusta el margen debajo del navbar -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  

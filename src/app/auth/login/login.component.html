@@ -1,0 +1,203 @@
+<div class="login-container relative w-screen h-screen flex items-center justify-center bg-black overflow-hidden">
+  <!-- Fondo de líneas animadas -->
+  <div class="absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 animate-move-lines"></div>
+
+  <!-- Contenido principal -->
+  <div class="relative z-10 flex items-center space-x-20">
+    <!-- Imagen del MichiGo -->
+    <img src="/assets/michigo.png" alt="MichiGo" class="animate-float w-[700px]">
+
+    <!-- Texto y botón de login -->
+    <div class="text-white text-left">
+      <h1 class="text-9xl font-bold mb-8">MichiGo</h1>
+      <button (click)="openModal()" class="bg-yellow-500 hover:bg-yellow-600 text-white text-2xl py-2 px-6 rounded-md">
+        Login
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="isModalOpen" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-90 z-20">
+  <div class="bg-[#1c1e22] w-[500px] p-10 rounded-lg shadow-lg text-white">
+    <div class="text-center mb-6">
+      <img src="/assets/michigo.png" alt="Logo" class="mx-auto mb-4 w-24">
+      <h2 class="text-3xl font-bold">Sign in to MichiGo</h2>
+    </div>
+
+    <!-- Botones de inicio de sesión -->
+    <div class="space-y-4">
+      <button (click)="openWalletModal()"
+        class="flex items-center justify-center space-x-4 w-full bg-gray-100 border-t border-black py-3 px-4 rounded-md hover:bg-gray-200">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ethereum-eth-icon.png"
+          alt="Ethereum" class="w-6">
+        <span class="text-black font-semibold">Sign in with Ethereum</span>
+      </button>
+
+      <button
+        class="flex items-center justify-center space-x-4 w-full bg-[#6a00f4] border-t border-black py-3 px-4 rounded-md hover:bg-purple-700">
+        <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="w-6">
+        <span class="font-semibold">Sign in with Solana</span>
+      </button>
+
+      <button
+        class="flex items-center justify-center space-x-4 w-full bg-[#1a73e8] border-t border-black py-3 px-4 rounded-md hover:bg-blue-700">
+        <img src="https://cryptologos.cc/logos/starknet-token-strk-logo.png" alt="Starknet" class="w-6">
+        <span class="font-semibold">Sign in with Starknet</span>
+      </button>
+    </div>
+
+    <!-- Otras opciones -->
+    <div class="text-center text-gray-400 my-4">Or use a provider</div>
+
+    <div class="flex justify-between mb-4">
+      <button
+        class="flex items-center justify-center w-full bg-indigo-500 py-3 px-4 mr-2 rounded text-white hover:bg-indigo-600">
+        <img src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-1-1.png" alt="Discord"
+          class="w-6 mr-2">
+        <span>Discord</span>
+      </button>
+      <button
+        class="flex items-center justify-center w-full bg-gray-800 py-3 px-4 rounded text-white hover:bg-gray-900">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="w-6 mr-2">
+        <span>GitHub</span>
+      </button>
+    </div>
+
+    <!-- Iniciar sesión con email -->
+    <div class="text-center text-gray-400 my-4">Or continue with email</div>
+
+    <!-- Enlazar el input de correo a la variable 'email' -->
+    <input [(ngModel)]="email" type="email" placeholder="Enter your email address"
+      class="w-full p-3 border border-gray-300 rounded mb-4 bg-gray-800 text-white placeholder-gray-400">
+
+    <!-- Botón actualizado que llama a sendMagicLink() -->
+    <button (click)="sendMagicLink()" class="w-full bg-[#ff1e13] text-white py-3 rounded hover:bg-[#E62A23]">Send Magic
+      Link</button>
+
+    <!-- Botón para cerrar el modal -->
+    <button (click)="closeModal()"
+      class="w-full bg-gray-200 text-black py-3 mt-4 rounded hover:bg-gray-300">Close</button>
+  </div>
+</div>
+
+<!-- Modal de billeteras al hacer clic en "Sign in with Ethereum" -->
+<div *ngIf="isWalletModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+  <div class="modal-content bg-black text-white rounded-lg shadow-lg w-[800px] h-auto flex overflow-hidden relative">
+    <!-- Efecto de borde colorido con "gusano" -->
+    <div class="absolute inset-0 rounded-lg border-4 border-transparent modal-border-animation"></div>
+
+    <!-- Sección izquierda (lista de billeteras) -->
+    <div class="w-2/5 bg-black text-white p-6">
+      <h2 class="font-bold text-lg mb-4">Conectar una billetera</h2>
+
+      <!-- Listado de billeteras -->
+      <h3 class="text-sm text-gray-400 mb-2 font-bold">Popular</h3>
+      <ul class="space-y-3">
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="showQR('rainbow')">
+          <img src="/assets/rainbow-logo.png" alt="Rainbow" class="wallet-icon">
+          <span class="font-bold">Rainbow</span>
+        </li>
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="showQR('coinbase')">
+          <img src="/assets/coinbase-wallet-logo.png" alt="Coinbase" class="wallet-icon">
+          <span class="font-bold">Coinbase Wallet</span>
+        </li>
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="handleMetaMaskLogin()">
+          <img src="/assets/metamask-logo.png" alt="MetaMask" class="wallet-icon">
+          <span class="font-bold">MetaMask</span>
+        </li>
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="showQR('walletconnect')">
+          <img src="/assets/walletconnect-logo.png" alt="WalletConnect" class="wallet-icon">
+          <span class="font-bold">WalletConnect</span>
+        </li>
+      </ul>
+
+      <h3 class="text-sm text-gray-400 mt-4 mb-2 font-bold">Otro</h3>
+      <ul class="space-y-3">
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="showQR('argent')">
+          <img src="/assets/argent-logo.png" alt="Argent" class="wallet-icon">
+          <span class="font-bold">Argent</span>
+        </li>
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="showQR('ledger')">
+          <img src="/assets/ledger-logo.png" alt="Ledger" class="wallet-icon">
+          <span class="font-bold">Ledger</span>
+        </li>
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="showQR('rabby')">
+          <img src="/assets/rabby-logo.png" alt="Rabby" class="wallet-icon">
+          <span class="font-bold">Rabby Wallet</span>
+        </li>
+        <li class="flex items-center space-x-3 cursor-pointer hover:text-gray-300" (click)="showQR('trust')">
+          <img src="/assets/trust-logo.png" alt="Trust Wallet" class="wallet-icon">
+          <span class="font-bold">Trust Wallet</span>
+        </li>
+      </ul>
+    </div>
+
+      <!-- Barra estática de diseño -->
+      <div class="static-design-bar"></div>
+
+    <!-- Sección derecha (Información general sobre las billeteras) -->
+    <div class="w-3/5 p-6 bg-[#000000] flex flex-col justify-center" *ngIf="!selectedWallet && !showingQR">
+      <h2 class="font-bold text-lg text-center mb-6">¿Qué es una billetera?</h2>
+      <div class="mb-6 flex items-center space-x-4">
+        <img src="/assets/wallet-icon.png" alt="Wallet Icon" class="w-16 h-16">
+        <div>
+          <h3 class="font-bold text-white">Un hogar para tus Activos Digitales</h3>
+          <p class="text-sm text-gray-300">Las carteras se utilizan para enviar, recibir, almacenar y mostrar activos digitales como Ethereum y NFTs.</p>
+        </div>
+      </div>
+
+      <div class="mb-6 flex items-center space-x-4">
+        <img src="/assets/login-icon.png" alt="Login Icon" class="w-16 h-16">
+        <div>
+          <h3 class="font-bold text-white">Una nueva forma de iniciar sesión</h3>
+          <p class="text-sm text-gray-300">En lugar de crear nuevas cuentas y contraseñas en cada sitio web, simplemente conecta tu cartera.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center space-y-4">
+        <button class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700">Obtener una billetera</button>
+        <button class="text-blue-600 hover:text-blue-700 font-bold">Obtener más información</button>
+      </div>
+    </div>
+
+    <!-- Sección derecha para MetaMask (solo se muestra cuando MetaMask está seleccionada) -->
+    <div class="w-3/5 p-6 bg-[#000000] flex flex-col justify-center items-center" *ngIf="selectedWallet === 'metamask'">
+      <h2 class="font-bold text-lg text-center mb-6">Conectando con MetaMask</h2>
+      <img src="/assets/metamask.png" alt="MetaMask Logo" class="w-24 h-24 mb-4 mx-auto">
+      <p class="text-center text-gray-300 mb-4">Por favor, confirma la conexión desde la extensión de MetaMask para proceder.</p>
+      <div class="loader mt-4"></div> <!-- Animación de carga -->
+    </div>
+
+    <!-- Sección derecha que cambia para mostrar el QR de cada billetera -->
+    <div class="w-3/5 p-6 bg-[#000000] flex flex-col justify-center" *ngIf="showingQR && selectedWallet && selectedWallet !== 'metamask' && selectedWallet !== 'rabby'">
+      <h2 class="font-bold text-lg text-center mb-6">Escanea con {{ selectedWallet | titlecase }}</h2>
+
+      <!-- Mostrar el QR específico de cada billetera -->
+      <img *ngIf="selectedWallet === 'rainbow'" src="/assets/rainbow-qr.png" alt="QR Code Rainbow" class="qr-code mx-auto">
+      <img *ngIf="selectedWallet === 'coinbase'" src="/assets/coinbase-wallet-qr.png" alt="QR Code Coinbase" class="qr-code mx-auto">
+      <img *ngIf="selectedWallet === 'walletconnect'" src="/assets/wallet-connect-qr.png" alt="QR Code WalletConnect" class="qr-code mx-auto">
+      <img *ngIf="selectedWallet === 'argent'" src="/assets/argent-qr.png" alt="QR Code Argent" class="qr-code mx-auto">
+      <img *ngIf="selectedWallet === 'ledger'" src="/assets/ledger-qr.png" alt="QR Code Ledger" class="qr-code mx-auto">
+      <img *ngIf="selectedWallet === 'trust'" src="/assets/trust-wallet-qr.png" alt="QR Code Trust Wallet" class="qr-code mx-auto">
+
+      <div class="text-center text-gray-400 mt-4">¿No tienes {{ selectedWallet | titlecase }}?
+        <a [href]="walletLinks[selectedWallet]" class="text-blue-500 hover:text-blue-700" target="_blank">Obtener</a>
+      </div>
+    </div>
+
+    <!-- Sección especial para Rabby Wallet (solo se muestra cuando Rabby está seleccionada) -->
+    <div class="w-3/5 p-6 bg-[#000000] flex flex-col justify-center items-center" *ngIf="selectedWallet === 'rabby'">
+      <!-- Columna derecha: Obtener Rabby Wallet -->
+      <div class="w-full text-center">
+        <h2 class="font-bold text-lg mb-6">Obtener Rabby Wallet</h2>
+        <img src="/assets/opera-logo.png" alt="Opera Logo" class="w-24 h-24 mb-4 mx-auto">
+        <p class="text-gray-300 mb-4">Rabby Wallet para Opera. Acceda a su billetera directamente desde su navegador web favorito.</p>
+        <a [href]="walletLinks['rabby']" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700" target="_blank">Añadir a Opera</a>
+      </div>
+    </div>
+    
+    <!-- Botón para cerrar el modal -->
+    <button (click)="closeWalletModal()" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+  </div>
+</div>

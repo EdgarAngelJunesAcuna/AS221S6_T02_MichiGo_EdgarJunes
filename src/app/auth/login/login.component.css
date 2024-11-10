@@ -1,0 +1,184 @@
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes move-background {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-move-lines {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 177, 50, 0.288),
+    rgba(248, 197, 58, 0.181) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  animation: move-background 10s linear infinite;
+}
+
+/**/
+
+.modal-content {
+  position: relative;
+  z-index: 20; /* Asegúrate de que este z-index sea mayor que el de la animación del borde */
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row; /* Asegura que los elementos se posicionen en fila */
+}
+
+.modal-border-animation {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  border-radius: 12px;
+  border: 4px solid transparent;
+  animation: borderColorChange 3s linear infinite;
+  pointer-events: none; /* This ensures it won't block interaction */
+}
+
+
+@keyframes borderColorChange {
+  0% {
+    border-color: #39FF14;
+  }
+  50% {
+    border-color: #00f;
+  }
+  100% {
+    border-color: #39FF14;
+  }
+}
+
+.wallet-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  padding: 4px;
+  background-color: #1f1f1f;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-gray-300 {
+  color: #B3B3B3;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-blue-600 {
+  background-color: #2563EB;
+}
+
+.bg-blue-700:hover {
+  background-color: #1E40AF;
+}
+
+.text-blue-600:hover {
+  color: #2563EB;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: #1E40AF;
+}
+
+.hover\:text-blue-700:hover {
+  color: #1E40AF;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.space-x-4 {
+  gap: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+/* Efecto de hover para las billeteras */
+ul li {
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul li:hover {
+  background-color: #444444; /* Fondo oscuro al hacer hover */
+  color: #ffffff; /* Color del texto al hacer hover */
+}
+
+ul li:hover .wallet-icon {
+  background-color: #555555; /* Cambiar color de fondo del icono al hacer hover */
+}
+
+/**/
+.qr-code {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%; /* Hace la imagen circular */
+  border: 4px solid #ffffff; /* Añade un borde blanco */
+  padding: 10px;
+  background-color: #000; /* Fondo negro detrás del QR */
+}
+
+/**/
+.static-design-bar {
+  width: 8px; /* Aumenta el ancho de la barra */
+  height: auto; /* Se adapta al contenido */
+  background: linear-gradient(to bottom, #ffffff 0%, #6b6d8e 50%); /* Gradiente de color */
+  margin: 0 1.5rem; /* Ajusta el margen para centrar la barra */
+  border-radius: 15px; /* Más redondeado para el estilo deseado */
+  align-self: stretch; /* Para que se extienda según el contenedor */
+}
+
+/**/
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Light grey */
+  border-top: 4px solid #ffffff; /* White color for the top */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

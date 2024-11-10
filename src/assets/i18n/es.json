@@ -1,0 +1,95 @@
+{
+  "NAV": {
+    "ABOUT": "Sobre nosotros",
+    "SERVICES": "Servicios",
+    "CASES": "Casos de Uso",
+    "PRICING": "Precios",
+    "BLOG": "Blog",
+    "LOGIN": "Empecemos",
+    "LEARN_MORE": "Saber más"
+  },
+  "MAIN": {
+    "TITLE": "La Nueva Generación de Cartera Digital",
+    "DESCRIPTION": "MichiGo ofrece una cartera digital segura y conveniente para almacenar, gestionar y transferir tus criptomonedas. Nuestra plataforma te permite enviar, recibir e intercambiar criptomonedas con facilidad, mientras mantiene tus fondos seguros utilizando la última tecnología en seguridad y encriptación.",
+    "GET_STARTED": "Empezar Ahora"
+  },
+  "HAPPEN": {
+    "TITLE": "Haz que las cosas sucedan",
+    "DESCRIPTION": "Contáctanos hoy para aprender más sobre cómo MichiGo puede ayudarte a gestionar tus criptomonedas de manera segura y eficiente.",
+    "BUTTON": "Obtén tu propuesta gratuita"
+  },
+  "OBJECTIVES": {
+    "SECTION_TITLE": "Nuestros Objetivos",
+    "SECTION_DESC": "Estos son los principales objetivos de MichiGo para ayudarte a gestionar tus activos digitales.",
+    "OBJECTIVE_1_TITLE": "Seguridad de Criptomonedas",
+    "OBJECTIVE_1_DESC": "Mantén tus criptomonedas seguras con nuestras funciones avanzadas de seguridad.",
+    "OBJECTIVE_2_TITLE": "Gestión de Cartera",
+    "OBJECTIVE_2_DESC": "Gestiona tus criptomonedas de manera eficiente y sin complicaciones.",
+    "OBJECTIVE_3_TITLE": "Intercambio Rápido",
+    "OBJECTIVE_3_DESC": "Intercambia criptomonedas de forma rápida y segura en nuestra plataforma."
+  },
+  "BENEFITS": {
+    "SECTION_TITLE": "Descubre Nuestros Beneficios",
+    "SECTION_DESC": "Conoce las ventajas de usar MichiGo.",
+    "BENEFIT_1_TITLE": "Seguridad 😺 MichiGo",
+    "BENEFIT_1_DESC": "Tus activos digitales están seguros con las características avanzadas de seguridad de MichiGo.",
+    "BENEFIT_2_TITLE": "Eficiencia 😺 MichiGo",
+    "BENEFIT_2_DESC": "Gestiona tus monedas digitales sin esfuerzo con nuestra plataforma optimizada.",
+    "BENEFIT_3_TITLE": "Flexibilidad 😺 MichiGo",
+    "BENEFIT_3_DESC": "Adapta la gestión de tus activos digitales a tus necesidades.",
+    "BENEFIT_4_TITLE": "Soporte 😺 MichiGo",
+    "BENEFIT_4_DESC": "Proporcionamos soporte 24/7 para garantizar una experiencia fluida."
+  },
+  "FEATURES": {
+    "TITLE": "¿Por qué elegir MichiGo?",
+    "FEATURE_1_TITLE": "Seguridad Avanzada",
+    "FEATURE_1_DESC": "Ofrecemos seguridad avanzada de blockchain para mantener tus activos seguros.",
+    "FEATURE_2_TITLE": "Interfaz Amigable",
+    "FEATURE_2_DESC": "Nuestra plataforma está diseñada para ser intuitiva y fácil de usar.",
+    "FEATURE_3_TITLE": "Transacciones Rápidas",
+    "FEATURE_3_DESC": "Disfruta de transacciones rápidas y seguras con MichiGo.",
+    "FEATURE_4_TITLE": "Soporte 24/7",
+    "FEATURE_4_DESC": "Ofrecemos soporte las 24 horas del día para ayudarte con cualquier problema."
+  },
+  "TEAM": {
+    "SECTION_TITLE": "Conoce a Nuestro Equipo",
+    "SECTION_DESC": "Conoce a los talentosos desarrolladores detrás de MichiGo. Estamos dedicados a construir una plataforma segura y eficiente para gestionar tus activos digitales.",
+    "MEMBERS": [
+      {
+        "NAME": "Brandon Gabriel Guerrero More",
+        "ROLE": "Desarrollador de MichiGo",
+        "DESCRIPTION": "Somos estudiantes de análisis de sistemas del sexto semestre en el Instituto Valle Grande, y somos los desarrolladores de MichiGo."
+      },
+      {
+        "NAME": "Anghela Antonella Rodriguez Barrios",
+        "ROLE": "Desarrolladora de MichiGo",
+        "DESCRIPTION": "Somos estudiantes de análisis de sistemas del sexto semestre en el Instituto Valle Grande, y somos los desarrolladores de MichiGo."
+      },
+      {
+        "NAME": "Edgar Angel Raziel Junes Acuña",
+        "ROLE": "Desarrollador de MichiGo",
+        "DESCRIPTION": "Somos estudiantes de análisis de sistemas del sexto semestre en el Instituto Valle Grande, y somos los desarrolladores de MichiGo."
+      }
+    ],
+    "SEE_ALL_BUTTON": "Ver todo el equipo"
+  },
+  "CONCLUSIONS": {
+    "TITLE": "Conclusiones",
+    "CONTENT": "La plataforma MichiGo ha sido diseñada con éxito para ofrecer una solución segura y eficiente para la gestión de monedas digitales. Durante su desarrollo, hemos aprendido la importancia de crear una interfaz fácil de usar e incorporar características de seguridad para garantizar la confianza de los usuarios. Las mejoras futuras podrían incluir la ampliación de funciones para el acceso sin conexión y una mayor transparencia en las transacciones."
+  },
+  "FOOTER": {
+    "DESCRIPTION": "MichiGo está diseñado para revolucionar tu experiencia con las monedas digitales. Únete a nosotros para un futuro financiero seguro y fluido.",
+    "LINK_ABOUT": "Sobre Nosotros",
+    "LINK_SERVICES": "Servicios",
+    "LINK_CONTACT": "Contáctanos",
+    "RIGHTS": "Todos los derechos reservados."
+  },
+  "LOGIN": {
+    "BUTTON_TEXT": "Iniciar Sesión",
+    "TITLE": "Inicia sesión en MichiGo",
+    "ETHEREUM": "Iniciar con Ethereum",
+    "SOLANA": "Iniciar con Solana",
+    "STARKNET": "Iniciar con Starknet",
+    "SEND_MAGIC_LINK": "Enviar Enlace Mágico"
+  }
+}

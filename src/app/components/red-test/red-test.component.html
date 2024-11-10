@@ -1,0 +1,94 @@
+<div class="relative h-screen bg-gradient-radial flex flex-col justify-center items-start text-white p-10">
+    <div class="flex flex-row items-center">
+        <div>
+            <!-- Texto de bienvenida aún más grande -->
+            <h1 class="text-9xl font-bold tracking-wider mb-2">Bienvenido a MetaMask</h1>
+            <!-- Texto de "billetera digital" más grande -->
+            <p class="text-2xl mb-6 opacity-90">Tu billetera digital</p>
+            <!-- Botón estilo rectangular, negrita y texto en blanco -->
+            <button class="px-12 py-4 rounded-lg text-white bg-yellow-500 text-lg font-bold hover:bg-yellow-600"
+                (click)="openOptionsModal()">
+                Abrir opciones
+            </button>
+        </div>
+        <!-- Contenedor para el logo de MetaMask -->
+        <div class="ml-10">
+            <!-- Aquí se puede insertar el componente <app-metamask-logo> o una imagen SVG -->
+            <app-metamask-logo></app-metamask-logo>
+        </div>
+    </div>
+
+    <!-- Modal para opciones (MICHITRANSFERIR y MICHIINFO) -->
+    <div *ngIf="isOptionsModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-auto text-center relative">
+            <!-- Botón de cerrar (X) -->
+            <button (click)="closeOptionsModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Cambié el color del texto a negro -->
+            <h2 class="text-2xl font-bold mb-4 text-black">Selecciona una opción</h2>
+
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Tarjeta MICHITRANSFERIR con sombra suave y efecto hover -->
+                <div (click)="selectOption('MICHITRANSFERIR')" class="p-4 bg-black rounded-lg cursor-pointer card-shadow hover:scale-105 transition-transform">
+                    <img src="assets/billetera.png" class="mx-auto w-16 mb-4" alt="Coin">
+                    <p class="text-white font-semibold">MICHITRANSFERIR</p>
+                </div>
+            
+                <!-- Tarjeta MICHIINFO con sombra suave y efecto hover -->
+                <div (click)="selectOption('MICHIINFO')" class="p-4 bg-black rounded-lg cursor-pointer card-shadow hover:scale-105 transition-transform">
+                    <img src="assets/moneda.png" class="mx-auto w-16 mb-4" alt="Coin">
+                    <p class="text-white font-semibold">MICHIINFO</p>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+    <!-- Modal para seleccionar red -->
+    <div *ngIf="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-auto text-center relative">
+            <!-- Botón de cerrar (X) -->
+            <button (click)="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h2 class="text-2xl font-bold mb-4 text-black">Selecciona una red</h2>
+
+            <div class="grid grid-cols-3 gap-4">
+                <!-- Tarjeta para Holesky -->
+                <div (click)="selectNetwork('Holesky')"
+                    class="p-4 bg-blue-500 rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/640px-MetaMask_Fox.svg.png"
+                        class="mx-auto w-16 mb-2" alt="MetaMask Logo">
+                    <p class="text-white font-semibold">Holesky</p>
+                </div>
+
+                <!-- Tarjeta para Sepolia -->
+                <div (click)="selectNetwork('Sepolia')"
+                    class="p-4 bg-purple-500 rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/640px-MetaMask_Fox.svg.png"
+                        class="mx-auto w-16 mb-2" alt="MetaMask Logo">
+                    <p class="text-white font-semibold">Sepolia</p>
+                </div>
+
+                <!-- Tarjeta para Base Sepolia -->
+                <div (click)="selectNetwork('Base Sepolia')"
+                    class="p-4 bg-green-500 rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/640px-MetaMask_Fox.svg.png"
+                        class="mx-auto w-16 mb-2" alt="MetaMask Logo">
+                    <p class="text-white font-semibold">Base Sepolia</p>
+                </div>
+            </div>
+
+            <!-- Botón para cerrar el modal -->
+            <button (click)="closeModal()" class="mt-4 text-gray-500">Cancelar</button>
+        </div>
+    </div>
+</div>

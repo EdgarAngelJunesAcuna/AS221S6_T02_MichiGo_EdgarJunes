@@ -1,0 +1,72 @@
+/* Estilo del contenedor principal con Tailwind */
+.web3-container {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+  }
+  
+  /* Estilo para la tarjeta */
+  .web3-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Animación de flotación */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Estilo para los inputs */
+  .web3-input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .web3-input:focus {
+    border-color: #2980b9;
+  }
+  
+  /* Estilo para el botón */
+  .web3-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .web3-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Título con gradiente */
+  .gradient-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  

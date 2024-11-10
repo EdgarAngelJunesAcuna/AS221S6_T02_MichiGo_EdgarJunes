@@ -1,0 +1,44 @@
+header {
+  height: auto; /* Ajustamos para que sea dinámico con el contenido */
+  z-index: 10;  /* Navbar por encima del contenido */
+  background-color: #1a1a1a; /* Negro más oscuro */
+  margin-left: 20px; /* Espacio entre el sidebar y el navbar */
+  margin-right: 1rem; /* Espacio en el lado derecho para que no se vea pegado */
+  margin-top: 1rem; /* Añade espacio arriba del navbar */
+  padding-top: 1rem; /* Espacio interno superior */
+  padding-bottom: 1rem; /* Espacio interno inferior */
+  border-radius: 0.5rem; /* Bordes redondeados para suavizar el diseño */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar más profundidad */
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-gray-100:hover {
+  background-color: #f7f7f7;
+}
+
+.text-gray-900 {
+  color: #1a1a1a;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.rounded-lg {
+  border-radius: 0.75rem;
+}

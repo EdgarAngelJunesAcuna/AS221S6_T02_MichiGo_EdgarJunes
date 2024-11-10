@@ -1,0 +1,62 @@
+.main-content {
+    margin-top: 4rem; /* Este espacio asegura que el contenido no se superponga con el navbar */
+  }
+  
+
+/* Estilos para el modal y las opciones */
+.bg-gray-900 {
+  background-color: #1a1a1a;
+}
+
+.bg-gray-800:hover {
+  background-color: #333333;
+}
+
+ul.space-y-2 > li {
+  transition: background-color 0.3s;
+}
+
+ul.space-y-2 > li.bg-white.text-black {
+  font-weight: bold;
+}
+
+/* Estilo para los toasts personalizados */
+.toast-black {
+  background-color: #1a1a1a !important; /* Color de fondo negro */
+  color: #fff !important; /* Color de texto blanco */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toast-black .ngx-toastr {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.toast-black .toast-title {
+  font-weight: bold;
+}
+
+.toast-black .toast-message {
+  margin-top: 5px;
+}
+
+.toast-black .ngx-toastr-close-button {
+  color: #fff;
+}
+
+.cat-animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Ajusta la altura según necesites */
+  margin-top: 20px; /* Espacio por encima de la animación */
+}
+
+.cat-animation {
+  width: 750px;
+  height: auto;
+  animation: running-animation 1.5s infinite linear;
+}
+
