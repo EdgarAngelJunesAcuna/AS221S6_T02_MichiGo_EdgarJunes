@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: edgarjunes/as221s6_t02_michigo:latest
+    ports:
+      - "4200:4200"  # Mapea el puerto 80 del contenedor al puerto 4200 en tu máquina
