@@ -1,0 +1,8 @@
+.main-content {
+    margin-top: 4rem; /* Este espacio asegura que el contenido no se superponga con el navbar */
+  }
+  
+/* Si deseas personalizar más allá de Tailwind */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -12,7 +12,7 @@ export class RedTestComponent {
   isOptionsModalOpen = false; // Controla el estado del modal de opciones
   selectedOption: string = ''; // Almacena la opción seleccionada
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   // Abre el modal de opciones
   openOptionsModal() {
@@ -97,5 +97,10 @@ export class RedTestComponent {
     } catch (error) {
       console.error('Error al cambiar de red:', error);
     }
+  }
+
+  // Método para navegar a la página de inicio
+  navigateToHome() {
+    this.router.navigate(['/michigo']); // Reemplaza '/' con la ruta de tu página principal si es diferente
   }
 }

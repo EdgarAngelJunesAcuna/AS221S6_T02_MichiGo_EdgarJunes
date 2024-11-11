@@ -1,1 +1,19 @@
-<p>michi-info works!</p>
+<div class="web3-container bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('assets/cielo.png');">
+  <div class="michi-info-container flex items-center space-x-8">
+      <!-- Imagen del Michi -->
+      <img src="https://media4.giphy.com/media/hZcmge7jsCMhO/giphy.gif?cid=ecf05e474522cee3a69fb43da42c4c6d0d9f493b75a43b70&rid=giphy.gif" alt="Imagen de Michi" class="michi-image-outside">
+
+      <!-- Contenedor de información -->
+      <div class="info-box">
+          <h2 class="title">MichiInfo</h2>
+          <p class="text-lg"><strong>ETH en la Wallet:</strong> {{ walletBalance }} ETH</p>
+          <p class="text-lg"><strong>Dirección de la Wallet:</strong> {{ walletAddress }}</p>
+          <div class="buttons">
+            <button (click)="connectWallet()" class="btn-connect">Verificar<br> Informacion</button>
+              <button (click)="navigateToTestNet()" class="btn-back">Volver a <br>Red-Test</button>
+              <button (click)="clearWalletData()" class="btn-clear">Limpiar
+              </button>
+          </div>
+      </div>
+  </div>
+</div>

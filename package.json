@@ -24,6 +24,7 @@
     "autoprefixer": "^10.4.20",
     "boxicons": "^2.1.4",
     "ethers": "^5.7.2",
+    "jspdf": "^2.5.2",
     "michigo": "file:",
     "ngx-toastr": "^19.0.0",
     "postcss": "^8.4.47",
@@ -33,6 +34,7 @@
     "tslib": "^2.3.0",
     "web3": "^4.13.0",
     "web3modal": "^1.9.12",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

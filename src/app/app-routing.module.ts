@@ -10,6 +10,8 @@ import { MichiInfoComponent } from './components/michi/michi-info/michi-info.com
 import { LoginComponent } from './auth/login/login.component';
 import { BarraNavegacionComponent } from './admin/barra-navegacion/barra-navegacion.component'; // Asegúrate de tener esto importado
 import { TransaccionComponent } from './admin/admin-transaccion/transaccion/transaccion.component';
+import { UsuarioComponent } from './admin/admin-transaccion/usuario/usuario.component';
+import { HistorialComponent } from './admin/admin-transaccion/historial/historial.component';
 
 const routes: Routes = [
   { path: '', component: CargaComponent }, 
@@ -20,8 +22,8 @@ const routes: Routes = [
 
   { path: 'navegacion-barra', component: BarraNavegacionComponent },
   { path: 'transacciones', component: TransaccionComponent },
-  { path: 'usuario', component: TransaccionComponent },
-
+  { path: 'usuario', component: UsuarioComponent },
+  { path: 'historial', component: HistorialComponent },
 
   { path: 'michigo', component: MichigoComponent },
   { path: 'red-test', component: RedTestComponent },

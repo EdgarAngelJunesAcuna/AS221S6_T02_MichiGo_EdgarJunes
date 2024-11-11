@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import Web3 from 'web3';
 import { NgIf, NgFor } from '@angular/common';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 declare global {
   interface Window {
@@ -39,7 +40,7 @@ export class MichiTransferirComponent implements OnInit {
     '0x1d7043a2907574c5101134791596cBeCFe47D53A': 'Destinatario Conocido'
   };
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private cd: ChangeDetectorRef, private router: Router) {} // Añadir el Router
 
   async ngOnInit(): Promise<void> {
     if (typeof window.ethereum !== 'undefined') {
@@ -47,8 +48,25 @@ export class MichiTransferirComponent implements OnInit {
       this.web3 = new Web3(window.ethereum);
     } else {
       console.error('MetaMask no está instalado. Por favor, instala MetaMask para continuar.');
-      this.showModal('Error de Conexión', 'MetaMask no está instalado. Por favor, instala MetaMask para continuar.');
+      this.showInstallMetaMaskAlert();
     }
+  }
+
+  // Mostrar alerta para instalar MetaMask
+  private showInstallMetaMaskAlert() {
+    Swal.fire({
+      icon: 'warning',
+      title: 'MetaMask no detectado',
+      html: `
+        <p>Te recomendamos tener la aplicación MetaMask instalada para utilizar esta función.</p>
+        <a href="https://metamask.io/download.html" target="_blank">
+          <button class="swal2-confirm swal2-styled" style="background-color: #3498db; color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px;">
+            Instalar MetaMask
+          </button>
+        </a>
+      `,
+      showConfirmButton: false
+    });
   }
 
   onSenderInputChange(event: Event): void {
@@ -192,4 +210,9 @@ export class MichiTransferirComponent implements OnInit {
       }
     }
   }
+
+    // Agregar la función de navegación
+    navigateToTestNet() {
+      this.router.navigate(['/red-test']);
+    }
 }

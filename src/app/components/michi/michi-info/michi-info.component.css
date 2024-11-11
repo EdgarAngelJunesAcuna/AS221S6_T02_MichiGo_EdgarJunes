@@ -1,0 +1,126 @@
+.web3-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.michi-info-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.michi-image-outside {
+  width: 450px; /* Tamaño de la imagen */
+  position: relative;
+  top: -20px; /* Ajusta la posición de la imagen para que esté "flotando" */
+  margin-right: 100px; /* Espacio extra para separar la imagen del cuadro */
+}
+
+.info-box {
+  background-color: #f9f9ff; /* Fondo más claro */
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  max-width: 600px;
+  min-height: 300px;
+  width: 100%;
+  border: 2px solid #d1d5db; /* Borde sutil */
+}
+
+
+.title {
+  font-size: 1.5rem;
+  color: #2b2b2b;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #2b2b2b;
+  margin: 0.5rem 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  gap: 1.5rem; /* Añade más espacio entre los botones */
+}
+
+
+.btn-connect, .btn-back, .btn-clear {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn-connect {
+  background-color: #0e6acc;
+  color: white;
+  width: 550px; /* Aumenta el ancho del botón */
+  height: 60px; /* Aumenta la altura del botón */
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-size: 1rem; /* Ajusta el tamaño del texto */
+  line-height: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.btn-back {
+  background-color: #000000;
+  color: #ffffff;
+  width: 550px; /* Aumenta el ancho del botón */
+  height: 60px; /* Aumenta la altura del botón */
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-size: 1rem; /* Ajusta el tamaño del texto */
+  line-height: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.btn-clear {
+  background-color: #ffd429;
+  color: white;
+  width: 550px; /* Aumenta el ancho del botón */
+  height: 60px; /* Aumenta la altura del botón */
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-size: 1rem; /* Ajusta el tamaño del texto */
+  line-height: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-connect:hover, .btn-back:hover, .btn-clear:hover {
+  transform: scale(1.05); /* Efecto de crecimiento */
+  transition: all 0.3s ease;
+}
+
+.michi-image-outside:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.info-box {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 153, 255, 0.3); /* Resplandor azul */
+}
+

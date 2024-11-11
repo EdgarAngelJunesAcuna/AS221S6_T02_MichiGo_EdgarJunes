@@ -1,0 +1,125 @@
+<div class="flex">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Main content area -->
+    <div class="flex-1 ml-64">
+        <!-- Navbar -->
+        <app-navbar></app-navbar>
+
+        <!-- Main content area below navbar -->
+        <div class="p-6 mt-16">
+            <h2 class="text-2xl font-bold mb-4">Contactos</h2>
+
+            <!-- Buttons to add a new contact and change account -->
+            <div class="flex space-x-4 mb-4">
+                <button (click)="showAddContactModal = true"
+                    class="bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded">
+                    Agregar Contacto
+                </button>
+                <button (click)="switchAccountPrompt()"
+                    class="bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded">
+                    Cambiar Usuario
+                </button>
+            </div>
+
+            <!-- Search bar -->
+            <input type="text" [(ngModel)]="searchTerm" (input)="filterContacts()" placeholder="Buscar contacto..."
+                class="shadow-md border border-gray-300 rounded w-full py-2 px-3 mb-4 focus:outline-none focus:ring-2 focus:ring-black">
+
+            <!-- Contact list in card format -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div *ngFor="let contact of filteredContacts"
+                    class="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full mr-4 flex items-center justify-center">
+                        <span class="text-white font-bold">{{ contact.name.charAt(0).toUpperCase() }}</span>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800">{{ contact.name }}</p>
+                        <p class="text-sm text-gray-500">{{ contact.wallet | slice:0:6 }}...{{ contact.wallet | slice:-4 }}</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button (click)="showEditContactModal(contact)"
+                            class="text-blue-500 hover:text-blue-700">Editar</button>
+                        <button (click)="deleteContact(contact)"
+                            class="text-red-500 hover:text-red-700">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal to add a contact -->
+            <div *ngIf="showAddContactModal"
+                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white rounded-lg p-6 w-1/3">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Agregar Contacto</h3>
+                        <button (click)="showAddContactModal = false"
+                            class="text-gray-500 hover:text-gray-800">&times;</button>
+                    </div>
+                    <input type="text" [(ngModel)]="newContactName" placeholder="Nombre de usuario"
+                        class="border border-gray-300 rounded w-full py-2 px-3 mb-3 focus:outline-none focus:ring-2 focus:ring-black">
+                    <input type="text" [(ngModel)]="newContactWallet" placeholder="Dirección pública de Ethereum"
+                        class="border border-gray-300 rounded w-full py-2 px-3 mb-3 focus:outline-none focus:ring-2 focus:ring-black">
+                    <div class="flex justify-end space-x-4">
+                        <button (click)="showAddContactModal = false"
+                            class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-900">
+                            Cancelar
+                        </button>
+                        <button (click)="addContact()"
+                            class="bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para cambiar de usuario -->
+            <div *ngIf="showAccountModal"
+                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white rounded-lg p-6 w-1/3 relative">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Seleccionar Cuenta</h3>
+                    <button (click)="toggleAccountModal()"
+                        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
+
+                    <!-- Lista de cuentas -->
+                    <div *ngFor="let account of accounts" (click)="switchAccount(account)"
+                        class="flex items-center p-3 mb-2 cursor-pointer bg-gray-100 hover:bg-gray-200 rounded-lg transition">
+                        <img [src]="getAccountIcon(account)" alt="Account Icon" class="w-6 h-6 mr-2 rounded-full">
+                        <div>
+                            <p class="text-lg font-semibold text-gray-800">{{ account.balance }} ETH</p>
+                            <p class="text-sm text-gray-500">{{ account.address | slice:0:6 }}...{{ account.address | slice:-4 }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal to edit contact -->
+            <div *ngIf="showEditContactModalVisible && selectedContact"
+                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white rounded-lg p-6 w-1/3">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Editar Contacto</h3>
+                        <button (click)="showEditContactModalVisible = false"
+                            class="text-gray-500 hover:text-gray-800">&times;</button>
+                    </div>
+                    <input type="text" [(ngModel)]="selectedContact.name" placeholder="Nombre de usuario"
+                        class="border border-gray-300 rounded w-full py-2 px-3 mb-3 focus:outline-none focus:ring-2 focus:ring-black">
+                    <input type="text" [(ngModel)]="selectedContact.wallet" placeholder="Dirección pública de Ethereum"
+                        class="border border-gray-300 rounded w-full py-2 px-3 mb-3 focus:outline-none focus:ring-2 focus:ring-black"
+                        disabled>
+                    <div class="flex justify-end space-x-4">
+                        <button (click)="showEditContactModalVisible = false"
+                            class="bg-gray-800 text-white font-semibold py-2 px-4 rounded hover:bg-gray-900">
+                            Cancelar
+                        </button>
+                        <button (click)="editContact()"
+                            class="bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

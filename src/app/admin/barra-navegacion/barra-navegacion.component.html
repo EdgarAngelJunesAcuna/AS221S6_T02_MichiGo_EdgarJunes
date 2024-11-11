@@ -1,16 +1,25 @@
 <div class="flex">
-    <!-- Sidebar -->
-    <app-sidebar></app-sidebar>
-  
-    <!-- Main content area -->
-    <div class="flex-1 ml-64">
-      <!-- Navbar -->
-      <app-navbar></app-navbar>
-  
-      <!-- Contenido principal debajo del navbar -->
-      <div class="p-6 mt-16"> <!-- Este mt-16 ajusta el margen debajo del navbar -->
-        <router-outlet></router-outlet>
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main content area -->
+  <div class="flex-1 ml-64">
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+
+    <!-- Contenido principal debajo del navbar -->
+    <div class="p-6 mt-16 text-center"> <!-- Centrar el texto -->
+      <h1 class="text-5xl font-bold mb-4">MICHITRANSFERENCIA</h1> <!-- Aumentar tamaño del título -->
+      <div class="flex justify-center mb-4">
+        <img 
+          src="https://media4.giphy.com/media/hZcmge7jsCMhO/giphy.gif?cid=ecf05e474522cee3a69fb43da42c4c6d0d9f493b75a43b70&rid=giphy.gif" 
+          alt="GIF de Michi" 
+          class="w-1/2" 
+          (click)="showAlert()"
+        >
       </div>
+      <p class="text-lg">¡Bienvenido! Explora las funcionalidades de MichiTransferencia.</p> <!-- Agregar un mensaje de bienvenida -->
+      <router-outlet></router-outlet>
     </div>
   </div>
-  
+</div>

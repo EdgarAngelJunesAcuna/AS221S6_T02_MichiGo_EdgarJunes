@@ -18,11 +18,14 @@ import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BarraNavegacionComponent } from './admin/barra-navegacion/barra-navegacion.component';
-import { MetamaskLogoComponent } from './metamask-logo/metamask-logo.component';
+import { MetamaskLogoComponent } from './components/metamask-logo/metamask-logo.component';
 import { TransaccionComponent } from './admin/admin-transaccion/transaccion/transaccion.component';
+import { UsuarioComponent } from './admin/admin-transaccion/usuario/usuario.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importar BrowserAnimationsModule
-import { ToastrModule } from 'ngx-toastr'; // Importar ToastrModule
+import { ToastrModule } from 'ngx-toastr';
+import { HistorialComponent } from './admin/admin-transaccion/historial/historial.component';
+import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 
 // Factory para cargar archivos de traducción
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,7 +46,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavbarComponent,
     BarraNavegacionComponent,
     MetamaskLogoComponent,
-    TransaccionComponent
+    TransaccionComponent,
+    UsuarioComponent,
+    HistorialComponent,
+    CustomCursorComponent,
   ],
   imports: [
     BrowserModule,

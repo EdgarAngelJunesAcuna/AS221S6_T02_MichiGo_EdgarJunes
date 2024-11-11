@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Importa el Router
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,8 @@ import { Router } from '@angular/router'; // Importa el Router
 })
 export class NavbarComponent {
   showProfileMenu: boolean = false;
-  account: string = 'DevelopMichiGo'; // Este valor puede venir de un servicio o input property.
+  account: string | null = 'DevelopMichiGo';
 
-  // Inyecta el Router en el constructor
   constructor(private router: Router) {}
 
   toggleProfileMenu() {
@@ -18,11 +18,21 @@ export class NavbarComponent {
   }
 
   onDisconnect() {
-    // Lógica para desconectar al usuario (si hay alguna)
-    console.log('Usuario desconectado');
-    
-    // Redirige a la página de login
-    this.router.navigate(['/login']);
+    // Lógica para "desconectar" MetaMask en la aplicación
+    this.account = null; // Limpia la cuenta de la sesión de tu aplicación
+
+    // Mostrar mensaje de desconexión con SweetAlert
+    Swal.fire({
+      icon: 'info',
+      title: 'Sesión Cerrada',
+      text: 'Has cerrado la sesión de MetaMask.',
+      background: '#000',
+      color: '#fff',
+      confirmButtonColor: '#3085d6'
+    }).then(() => {
+      // Redirige a la página de login después de cerrar la sesión
+      this.router.navigate(['/login']);
+    });
   }
 
   scrollToSection(sectionId: string) {

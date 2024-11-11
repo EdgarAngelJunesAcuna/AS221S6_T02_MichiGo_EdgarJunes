@@ -1,0 +1,67 @@
+<div class="flex">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main content area -->
+  <div class="flex-1 ml-64">
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+
+    <!-- Contenido principal debajo del navbar -->
+    <div class="p-6 mt-16">
+      <h2 class="text-2xl font-bold mb-4">Informe de Transacciones</h2>
+
+      <!-- Botón de sincronización -->
+      <div class="flex justify-end mb-4">
+        <button (click)="synchronizeTransactions()" class="bg-transparent">
+          <img src="assets/michigo.png" alt="Sincronizar Michigo" class="w-12 h-12" aria-label="Sincronizar Transacciones">
+        </button>
+      </div>
+
+      <!-- Barra de búsqueda y opciones de descarga -->
+      <div class="flex justify-between mb-4">
+        <div class="flex items-center p-2 border border-gray-300 rounded-md w-full max-w-lg">
+          <span class="material-icons mr-2" aria-hidden="true">search</span>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Buscar destinatario"
+            class="w-full outline-none px-2"
+            aria-label="Buscar destinatario"
+          />
+        </div>
+
+        <div class="flex space-x-4">
+          <button (click)="downloadPDF()" class="bg-black text-white font-bold py-2 px-4 rounded" aria-label="Descargar PDF">Descargar PDF</button>
+          <button (click)="downloadExcel()" class="bg-black text-white font-bold py-2 px-4 rounded" aria-label="Descargar Excel">Descargar Excel</button>
+          <button (click)="downloadCSV()" class="bg-black text-white font-bold py-2 px-4 rounded" aria-label="Descargar CSV">Descargar CSV</button>
+        </div>
+      </div>
+
+      <!-- Mensaje de resultados de búsqueda -->
+      <p class="text-gray-500 text-sm mb-4" *ngIf="filteredTransactions().length > 0">
+        {{ filteredTransactions().length }} transacciones encontradas.
+      </p>
+
+      <!-- Listado de transacciones -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div *ngFor="let transaction of filteredTransactions()" class="p-4 bg-white border border-gray-200 rounded-lg shadow">
+          <p class="text-lg font-semibold text-gray-800">
+            {{ transaction.type === 'deposit' ? 'Depósito' : 'Retiro' }}
+          </p>
+          <p class="text-sm text-gray-500">
+            <strong>De:</strong> {{ transaction.from | slice:0:6 }}...{{ transaction.from | slice:-4 }}
+          </p>
+          <p *ngIf="transaction.to" class="text-sm text-gray-500">
+            <strong>Para:</strong> {{ transaction.to | slice:0:6 }}...{{ transaction.to | slice:-4 }}
+          </p>
+          <p class="text-sm text-gray-500"><strong>Monto:</strong> {{ transaction.amount }} ETH</p>
+          <p class="text-sm text-gray-500"><strong>Fecha:</strong> {{ transaction.date | date: 'medium' }}</p>
+        </div>
+      </div>
+
+      <!-- Mensaje cuando no hay transacciones -->
+      <p *ngIf="filteredTransactions().length === 0" class="text-center text-gray-500 mt-4">No se han encontrado transacciones.</p>
+    </div>
+  </div>
+</div>

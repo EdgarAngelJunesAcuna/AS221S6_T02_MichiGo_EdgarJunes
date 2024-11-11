@@ -50,8 +50,21 @@ export class MichigoComponent {
       Swal.fire({
         icon: 'warning',
         title: 'MichiGo - MetaMask',
-        text: 'Te recomendamos tener la aplicación MetaMask instalada.'
+        html: `
+          <p>Te recomendamos tener la aplicación MetaMask instalada para utilizar esta función.</p>
+          <a href="https://metamask.io/download.html" target="_blank">
+            <button class="swal2-confirm swal2-styled" style="background-color: #3498db; color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px;">
+              Instalar MetaMask
+            </button>
+          </a>
+        `,
+        showConfirmButton: false
       });
     }
+  }
+
+  // Método para navegar a la página de inicio
+  navigateToHome() {
+    this.router.navigate(['/landing-page']); // Reemplaza '/' con la ruta de tu página principal si es diferente
   }
 }

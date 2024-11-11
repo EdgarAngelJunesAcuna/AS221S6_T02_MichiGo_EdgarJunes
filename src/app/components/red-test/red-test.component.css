@@ -45,3 +45,23 @@
   color: #000; /* Cambia el color del texto a negro */
 }
 
+.btn-volver {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #000000; /* Color de fondo negro */
+  color: #ffffff; /* Color de texto blanco */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #333333; /* Oscurece el botón en el hover */
+}
